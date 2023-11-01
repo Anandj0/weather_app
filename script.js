@@ -21,7 +21,6 @@ function getLocation() {
         console.error("Geolocation is not supported by this browser");
     }
 }
-getLocation();
 
 async function liveWeather(latitude, longitude) {
     const response = await fetch(apiUrl + `&lat=${latitude}` + `&lon=${longitude}` + `&appid=${apiKey}`);
@@ -53,6 +52,7 @@ async function showData(response) {
     document.querySelector(".error").style.display = "none";
     document.querySelector(".weather").style.display = "block";
 }
+getLocation();
 
 searchButton.addEventListener("click", () => {
     checkWeather(searchBox.value);
